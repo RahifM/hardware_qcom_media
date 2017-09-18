@@ -30,7 +30,7 @@ TARGETS_THAT_USE_HEVC_ADSP_HEAP := msm8226 msm8974
 TARGETS_THAT_HAVE_VENUS_HEVC := apq8084 msm8994 msm8996
 TARGETS_THAT_NEED_HEVC_LIB := msm8974 msm8610 msm8226 msm8916
 TARGETS_THAT_NEED_SW_HEVC := msm8974 msm8226 msm8916
-TARGETS_THAT_SUPPORT_UBWC := msm8996 titanium
+TARGETS_THAT_SUPPORT_UBWC := msm8996 msm8953
 TARGETS_THAT_NEED_SW_VDEC := msm8937
 
 ifeq ($(call is-board-platform-in-list, $(TARGETS_THAT_USE_HEVC_ADSP_HEAP)),true)
@@ -76,9 +76,9 @@ libmm-vdec-inc      	+= $(TOP)/hardware/qcom/media/msm8996/libc2dcolorconvert
 libmm-vdec-inc      	+= $(TOP)/frameworks/av/include/media/stagefright
 libmm-vdec-inc      	+= $(TARGET_OUT_HEADERS)/mm-video/SwVdec
 libmm-vdec-inc      	+= $(TARGET_OUT_HEADERS)/mm-video/swvdec
-ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
+#ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
 libmm-vdec-inc      	+= $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
-endif
+#endif
 
 ifeq ($(PLATFORM_SDK_VERSION), 18)  #JB_MR2
 libmm-vdec-def += -DANDROID_JELLYBEAN_MR2=1
@@ -86,9 +86,9 @@ libmm-vdec-inc += $(TOP)/hardware/qcom/media/msm8996/libstagefrighthw
 endif
 
 # Common Dependencies
-ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
+#ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
 libmm-vdec-add-dep := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
-endif
+#endif
 
 ifeq ($(call is-platform-sdk-version-at-least, 19),true)
 # This feature is enabled for Android KK+
@@ -108,7 +108,7 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE                    := libOmxVdec
 LOCAL_MODULE_TAGS               := optional
-LOCAL_CFLAGS                    := $(libmm-vdec-def) -Werror
+LOCAL_CFLAGS                    := $(libmm-vdec-def)
 LOCAL_C_INCLUDES                += $(libmm-vdec-inc)
 LOCAL_ADDITIONAL_DEPENDENCIES   := $(libmm-vdec-add-dep)
 
