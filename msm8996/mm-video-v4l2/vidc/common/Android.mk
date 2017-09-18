@@ -25,17 +25,17 @@ libmm-vidc-inc      += $(TOP)/hardware/qcom/media/msm8996/mm-core/inc
 libmm-vidc-inc      += $(TARGET_OUT_HEADERS)/qcom/display
 libmm-vidc-inc      += $(TOP)/hardware/qcom/media/msm8996/libc2dcolorconvert
 libmm-vidc-inc      += $(TOP)/frameworks/av/include/media/stagefright
-ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
+#ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
 libmm-vidc-inc      += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
-endif
+#endif
 
 LOCAL_MODULE                    := libOmxVidcCommon
 LOCAL_MODULE_TAGS               := optional
 LOCAL_CFLAGS                    := $(libmm-vidc-def)
 LOCAL_C_INCLUDES                := $(libmm-vidc-inc)
-ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
+#ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
 LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
-endif
+#endif
 
 LOCAL_PRELINK_MODULE      := false
 LOCAL_SHARED_LIBRARIES    := liblog libutils libcutils libdl
@@ -43,9 +43,9 @@ LOCAL_SHARED_LIBRARIES    := liblog libutils libcutils libdl
 LOCAL_SRC_FILES   := src/extra_data_handler.cpp
 LOCAL_SRC_FILES   += src/vidc_color_converter.cpp
 
-ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
+#ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
 LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
-endif
+#endif
 
 include $(BUILD_STATIC_LIBRARY)
 

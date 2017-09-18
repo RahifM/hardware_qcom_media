@@ -65,14 +65,14 @@ libmm-venc-inc      += frameworks/native/include/media/openmax
 libmm-venc-inc      += hardware/qcom/media/msm8996/libc2dcolorconvert
 libmm-venc-inc      += $(TARGET_OUT_HEADERS)/libvqzip
 libmm-venc-inc      += frameworks/av/include/media/stagefright
-ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
+#ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
 libmm-venc-inc      += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
-endif
+#endif
 
 # Common Dependencies
-ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
+#ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
 libmm-venc-add-dep  := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
-endif
+#endif
 
 # ---------------------------------------------------------------------------------
 # 			Make the Shared library (libOmxVenc)
