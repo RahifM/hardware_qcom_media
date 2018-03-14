@@ -122,6 +122,8 @@ LOCAL_SRC_FILES         += src/omx_vdec_msm8974.cpp
 
 LOCAL_CLANG_CFLAGS      += -Wno-absolute-value -Wno-pointer-bool-conversion
 
+LOCAL_CFLAGS            += -Wno-error
+
 include $(BUILD_SHARED_LIBRARY)
 
 
@@ -190,6 +192,8 @@ LOCAL_SHARED_LIBRARIES        += libswvdec
 
 LOCAL_SRC_FILES               := src/omx_swvdec.cpp
 LOCAL_SRC_FILES               += src/omx_swvdec_utils.cpp
+
+LOCAL_CFLAGS            += -Wno-error
 
 include $(BUILD_SHARED_LIBRARY)
 endif
