@@ -133,7 +133,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE                    := libOmxVdec
 LOCAL_MODULE_TAGS               := optional
 LOCAL_VENDOR_MODULE             := true
-LOCAL_CFLAGS                    := $(libmm-vdec-def) -Werror
+LOCAL_CFLAGS                    := $(libmm-vdec-def) -Werror -Wno-error
 
 LOCAL_HEADER_LIBRARIES := \
         media_plugin_headers \
@@ -173,7 +173,7 @@ ifeq ($(call is-board-platform-in-list, $(TARGETS_THAT_NEED_SW_VDEC)),true)
 LOCAL_MODULE                  := libOmxSwVdec
 LOCAL_MODULE_TAGS             := optional
 LOCAL_VENDOR_MODULE           := true
-LOCAL_CFLAGS                  := $(libmm-vdec-def)
+LOCAL_CFLAGS                  := $(libmm-vdec-def) -Wall -Wno-error
 
 LOCAL_HEADER_LIBRARIES := \
         media_plugin_headers \
