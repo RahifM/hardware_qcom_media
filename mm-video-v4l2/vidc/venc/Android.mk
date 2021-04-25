@@ -26,7 +26,7 @@ TARGETS_THAT_NEED_SW_VENC_MPEG4 := msm8909 msm8937
 TARGETS_THAT_NEED_SW_VENC_HEVC := msm8992
 TARGETS_THAT_SUPPORT_UBWC := msm8996 msm8998 apq8098_latv
 TARGETS_THAT_SUPPORT_VQZIP := msm8996 msm8998 apq8098_latv
-TARGETS_THAT_SUPPORT_PQ := msm8996 msm8998 apq8098_latv sdm660
+TARGETS_THAT_SUPPORT_PQ := msm8996 apq8098_latv
 TARGETS_THAT_USE_NV21 := sdm660 msm8953
 TARGETS_THAT_SUPPORT_MAX_H264_LEVEL_4 := msm8937
 TARGETS_THAT_SUPPORT_MAX_H264_LEVEL_51 := msm8953 sdm660
@@ -103,10 +103,16 @@ endif
 
 # Common Includes
 libmm-venc-inc      := $(LOCAL_PATH)/inc
+<<<<<<< HEAD
 libmm-venc-inc      += $(call project-path-for,qcom-media)/mm-video-v4l2/vidc/common/inc
 libmm-venc-inc      += $(call project-path-for,qcom-media)/mm-core/inc
 libmm-venc-inc      += $(call project-path-for,qcom-media)/libstagefrighthw
 libmm-venc-inc      += $(TARGET_OUT_HEADERS)/qcom/display
+=======
+libmm-venc-inc      += $(TOP)/hardware/qcom/media/mm-video-v4l2/vidc/common/inc
+libmm-venc-inc      += hardware/qcom/media/mm-core/inc
+libmm-venc-inc      += hardware/qcom/media/libstagefrighthw
+>>>>>>> 371f94f1fb231d866065962f8adc434196dff892
 libmm-venc-inc      += $(TARGET_OUT_HEADERS)/adreno
 libmm-venc-inc      += $(call project-path-for,qcom-media)/libc2dcolorconvert
 libmm-venc-inc      += $(call project-path-for,qcom-media)/hypv-intercept
@@ -144,6 +150,7 @@ LOCAL_HEADER_LIBRARIES := \
         libcutils_headers \
         libutils_headers \
         libhardware_headers \
+        display_headers \
 
 LOCAL_C_INCLUDES                := $(libmm-venc-inc)
 LOCAL_ADDITIONAL_DEPENDENCIES   := $(libmm-venc-add-dep)
@@ -185,6 +192,7 @@ LOCAL_HEADER_LIBRARIES := \
         libnativebase_headers \
         libutils_headers \
         libhardware_headers \
+        display_headers \
 
 LOCAL_C_INCLUDES                := $(libmm-venc-inc)
 LOCAL_ADDITIONAL_DEPENDENCIES   := $(libmm-venc-add-dep)
