@@ -80,14 +80,8 @@ include $(CLEAR_VARS)
 
 # Common Includes
 libmm-vdec-inc          := $(LOCAL_PATH)/inc
-<<<<<<< HEAD
 libmm-vdec-inc          += $(call project-path-for,qcom-media)/mm-video-v4l2/vidc/common/inc
 libmm-vdec-inc          += $(call project-path-for,qcom-media)/mm-core/inc
-libmm-vdec-inc          += $(TARGET_OUT_HEADERS)/qcom/display
-=======
-libmm-vdec-inc          += $(TOP)/hardware/qcom/media/mm-video-v4l2/vidc/common/inc
-libmm-vdec-inc          += $(TOP)/hardware/qcom/media/mm-core/inc
->>>>>>> 371f94f1fb231d866065962f8adc434196dff892
 libmm-vdec-inc          += $(TARGET_OUT_HEADERS)/adreno
 libmm-vdec-inc          += $(call project-path-for,qcom-media)/libc2dcolorconvert
 libmm-vdec-inc          += $(call project-path-for,qcom-media)/hypv-intercept

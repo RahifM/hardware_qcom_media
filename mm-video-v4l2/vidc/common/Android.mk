@@ -24,14 +24,8 @@ endif
 # ---------------------------------------------------------------------------------
 
 libmm-vidc-inc      := $(LOCAL_PATH)/inc
-<<<<<<< HEAD
 libmm-vidc-inc      += $(call project-path-for,qcom-media)/mm-core/inc
-libmm-vidc-inc      += $(TARGET_OUT_HEADERS)/qcom/display
 libmm-vidc-inc      += $(call project-path-for,qcom-media)/libc2dcolorconvert
-=======
-libmm-vidc-inc      += $(TOP)/hardware/qcom/media/mm-core/inc
-libmm-vidc-inc      += $(TOP)/hardware/qcom/media/libc2dcolorconvert
->>>>>>> 371f94f1fb231d866065962f8adc434196dff892
 libmm-vidc-inc      += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 
 LOCAL_MODULE                    := libOmxVidcCommon
